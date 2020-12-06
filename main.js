@@ -102,14 +102,14 @@ function mousedown(md_e) {
                 // animateRotation(a[0],!a[1],a[2]);
 			}
         } 
-        // else
-		// 	pivot.style.transform =
-		// 		"rotateX(" +
-		// 		(startXY[0] - (mm_e.pageY - md_e.pageY) / 2) +
-		// 		"deg)" +
-		// 		"rotateY(" +
-		// 		(startXY[1] + (mm_e.pageX - md_e.pageX) / 2) +
-		// 		"deg)";
+        else
+			pivot.style.transform =
+				"rotateX(" +
+				(startXY[0] - (mm_e.pageY - md_e.pageY) / 2) +
+				"deg)" +
+				"rotateY(" +
+				(startXY[1] + (mm_e.pageX - md_e.pageX) / 2) +
+				"deg)";
 	}
 	function mouseup() {
 		document.body.appendChild(guide);

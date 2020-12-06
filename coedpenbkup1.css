@@ -1,0 +1,98 @@
+$base-color: #0A0A0A;
+$ground-color: #2F2F31;
+$element-size: 2em;
+$sticker-size: 95%;
+$rounded: 10%;
+$cube-scale: 1.9;
+$faces: (left: (0, -90, 180), right: (0, 90, 90), back: (0, 180, -90), front: (0, 0, 0), bottom: (-90, 0, -90), top: (90, 0, 180));
+$colors: (blue: #001ca8, green: #006E16, white: #DDD, yellow: #E0AE00, orange: #FF5000, red: #DF0500);
+
+html, body {
+	height: 100%;
+	overflow: hidden;
+	background: radial-gradient(circle, white, rgba(black, .5)) {
+		color: $ground-color;
+		blend-mode: overlay; }
+}
+
+.credits {
+	width: 100%;
+	top: 90%;
+}
+
+.text {
+	text-align: center;
+	font: { family: Helvetica; size: .8rem; }
+	color: grey;
+	pointer-events: none;
+}
+
+.centered {
+	position: absolute;
+	top: 0; bottom: 0; left: 0; right: 0;
+	margin: auto;
+}
+
+.scene {
+	width: 100%;
+	height: 100%;
+	perspective: 1200px;
+	transform-style: preserve-3d;
+	> .pivot {
+		width: 0;
+		height: 0;
+		transition: .18s;
+	}
+	.anchor {
+		width: $element-size;
+		height: $element-size * 3;
+	}
+	div {
+		position: absolute;
+		transform-style: inherit;
+	}
+}
+
+#piece4 > .element.top > .sticker {
+	background-image: URL('http://i63.tinypic.com/25hh1xu.png');
+	background-size: cover;
+}
+
+.cube {
+	font-size: $cube-scale * 100%;
+	margin-left: -$element-size / 2;
+	margin-top: -$element-size / 2;
+
+	> .piece {
+		width: $element-size - .1em;
+		height: $element-size - .1em;
+		> .element {
+			width: 100%;
+			height: 100%;
+			background: $base-color;
+			outline: 1px solid transparent; // firefox aliasing
+			border: .05em solid $base-color { radius: $rounded }
+			@each $face, $angles in $faces {
+					&.#{$face} {
+						transform: rotateX + '(' + nth($angles, 1) + 'deg)'
+											 rotateY + '(' + nth($angles, 2) + 'deg)'
+											 rotateZ + '(' + nth($angles, 3) + 'deg)' translateZ($element-size / 2);
+					}
+			}
+			> .sticker {
+				@extend .centered;
+				transform: translateZ(2px);
+				width: $sticker-size;
+				height: $sticker-size;
+				border-radius: $rounded;
+				outline: 1px solid transparent; // firefox aliasing
+				box-shadow: inset .05em .05em .2rem 0 rgba(white, .25),
+										inset -.05em -.05em .2rem 0 rgba(black, .25);
+				@each $color, $value in $colors {
+					&.#{$color} { background-color: $value }
+				}
+			}
+		}
+	}
+
+}
