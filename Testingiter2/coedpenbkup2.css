@@ -48,10 +48,10 @@ html, body {
     transform-style: inherit;
   }
   
-  #piece4 > .element.top > .sticker {
-    /* background-image: URL("http://i63.tinypic.com/25hh1xu.png"); */
+  /* #piece4 > .element.top > .sticker {
+    background-image: URL("http://i63.tinypic.com/25hh1xu.png");
     background-size: cover;
-  }
+  } */
   
   .cube {
     font-size: 190%;
@@ -119,9 +119,9 @@ html, body {
   .run_button
 {
     position: relative;
-    background-color: red;
+    background-color: #DF0500;
     border-radius: 20px;
-    left:36%;
+    left:30%;
 
     bottom: 15%;
     padding: 10px 20px;
@@ -131,9 +131,45 @@ html, body {
     cursor: pointer;
     outline: none;
 }
+
 .run_button:hover{
-    background-color: white;
-    color:red;
+  background-color: #DDD;
+  color:#DF0500;
+}
+
+#hintbuton{
+  background-color: #FF5000;
+}
+#hintbuton:hover{
+  background-color:#DDD;
+  color: #DF0500;
+}
+
+#scramblebuton{
+  background-color: #006E16;
+}
+#scramblebuton:hover{
+  background-color:#DDD;
+  color: #DF0500;
+}
+
+#resetbuton{
+  background-color: #001ca8;
+}
+#resetbuton:hover{
+  background-color:#DDD;
+  color: #DF0500;
+}
+
+
+#Solvegivencube{
+  background-color: #DDD;
+  color: grey;
+}
+
+#Solvegivencube:hover{
+  background-color:#DDD;
+  color: grey;
 }
 
 

@@ -242,8 +242,7 @@
 
 
 
-
-
+<!-- 
             <div class="piece">
                 <div class="element left"></div>
                 <div class="element right"></div>
@@ -492,7 +491,7 @@
 
 
 
-
+ -->
 
 
 
@@ -510,10 +509,12 @@
         </div>
 
       </div>
-      <button type="button" onclick="undo()" class="run_button">Solve</button>
-      <button type="button" onclick="undo()" class="run_button">Hint</button>
-      <button type="button" onclick="undo()" class="run_button">Reset</button>
-      <button type="button" onclick="undo()" class="run_button">Scramble</button>
+      <button type="button" onclick="undo()" class="run_button" id = "solbuton">Solve</button>
+      <button type="button" onclick="undo()" class="run_button" id = "hintbuton" >Hint</button>
+      <button type="button" onclick="resetset()" class="run_button" id = "resetbuton" >Reset</button>
+      <button type="button" onclick="undo()" class="run_button" id = "scramblebuton" >Scramble</button>
+      <button type="button"  class="run_button" id = "Solvegivencube" disabled>Enter cube size</button>
+
 
 
       <div id="guide">
@@ -521,8 +522,8 @@
         <div class="anchor" id="anchor2" style="transform: translateZ(3px) translateY(-33.33%) rotate(-180deg) translateY(66.67%)"></div>
         <div class="anchor" id="anchor1" style="transform: translateZ(3px) translateY(-33.33%) rotate(-90deg) translateY(66.67%)"></div>
         <div class="anchor" id="anchor0" style="transform: translateZ(3px) translateY(-33.33%) rotate(0deg) translateY(66.67%)"></div>
-      </div>
-
+      </div> 
+ 
 
       <script src="coedpenbkup1.js"></script>
   
